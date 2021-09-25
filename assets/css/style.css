@@ -13,6 +13,7 @@ textarea{
   padding: 10px;
 }
 
+/* Jumbotron is a part of bootstrap. Create new class for this? */
 .jumbotron {
   text-align: center;
   background-color: transparent;
