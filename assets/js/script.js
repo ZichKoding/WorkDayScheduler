@@ -1,6 +1,17 @@
 // variables 
 let dayOfWeek = moment().day();
 let hourOfDay = moment().hour();
+let hourTextArea = {
+    "#hourNine": 9,
+    "#hourTen": 10, 
+    "#hourEleven": 11, 
+    "#hourTwelve": 12, 
+    "#hourOne": 13, 
+    "#hourTwo": 14, 
+    "#hourThree": 15, 
+    "#hourFour": 16, 
+    "#hourFive": 17,
+};
 
 console.log(hourOfDay);
 
@@ -39,3 +50,18 @@ switch(dayOfWeek){
         $("#currentDay").text("Wonder What Day It Is?!..... Me too...");
 }
 
+// loop through the body container and applying the correct background to the schedule hours
+for (let key in hourTextArea) {
+    let hourVal = hourTextArea[key];
+    
+    // setting current hour block red.
+    if (hourOfDay === hourVal) {
+        $(key).addClass("present");
+    } 
+    else if (hourOfDay > hourVal) {
+        $(key).addClass("past");
+    }
+    else {
+        $(key).addClass("future");
+    }
+}
