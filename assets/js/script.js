@@ -124,10 +124,13 @@ $("#fivePM").click(function () {
     localStorage.setItem(17, JSON.stringify($("#hourFive").val()));
 });
 
-
+loadingData();
 // interval loop to make sure everything is keeping updated every second.
 setInterval(() => {
     displayDay();
-    loadingData();
     textBackChange();
-}, 1000);
+}, 300);
+
+setInterval(() => {
+    loadingData();
+}, 30 * 1000);
